@@ -26,19 +26,20 @@ int handle_write_char(char c)
  */
 int handle_string(char *str)
 {
-	int i = 0;
+	int length;
+	length = 0;
 
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+
+	while (str[length] != '\0')
+		length++;
+
+	write(1, str, length);
+	return (length);
 }
 /**
  * _printf - a function produces output according to a format
