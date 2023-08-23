@@ -5,18 +5,19 @@
 
 /**
  * handle_write_char - a function write a char
- * @buffer: hold a char and null terminator
+ *@c: the char to be write
  *
  * Return: Always 0
  */
 int handle_write_char(char c)
 {
 	char buffer[2];
+
 	buffer[0] = c;
 	buffer[1] = '\0';
 
 	write(1, buffer, 1);
-	return 1;
+	return (1);
 }
 /**
  * handle_string - a function to print a string
